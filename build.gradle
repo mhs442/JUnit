@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // junit dependency
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.6.0'
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    implementation 'org.projectlombok:lombok:1.18.28'
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest
+    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+}
+
+test {
+    useJUnitPlatform()
+}
